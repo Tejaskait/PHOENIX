@@ -2,55 +2,59 @@ import { Link } from 'react-router-dom';
 import {FaSearch } from 'react-icons/fa';
 export default function Header() {
   return (
-    <header className='bg-transparent shadow-md'>
-        <div className='flex  justify-between items-center max-w-6xl mx-auto p-3'> <Link to='/'>
-        <h1 class=" text-md font-bold ">PHOENIX <img src="src/components/phoenix-logo.png" alt="Logo" style={{ height: '60px', width: '60px' }} /></h1>
-        <form className='bg-slate-100 p-3 rounded-lg flex items-center'>
-            <input type='text' placeholder='SEARCH' className='bg-transparent focus:outline-none w-24 sm:w-64'/> 
-            <FaSearch className='text-slate-600'/>
-        </form>
+    <header className="bg-transparent flex w-full px-8 py-4 bg-white shadow-md items-center justify-between">
+      {/* Logo Section */}
+      <div className="flex items-center gap-1">
+        <Link to="/">
+          <img
+            src="src/components/phoenix-logo.png"
+            alt="Logo"
+            style={{ height: "60px", width: "60px" }}
+          /> 
         </Link>
-        <ul className='flex gap-6'>
-            <Link to='/'>
-                <li className='hidden sm:inline text-slate-700 hover:underline'>
-                    HOME
-                </li>
-            </Link>
-            <Link to='/aboutus'>
-                <li className='hidden sm:inline text-slate-700 hover:underline'>
-                    ABOUT US
-                </li>
-            </Link>
-            <Link to='/contactus'>
-                <li className='hidden sm:inline text-slate-700 hover:underline'>
-                    CONTACT US
-                </li>
-            </Link>
-            <Link to='/resources'>
-                <li className='hidden sm:inline text-slate-700 hover:underline'>
-                    RESOURCES
-                </li>
-            </Link>
-            <Link to='/careers'>
-                <li className='hidden sm:inline text-slate-700 hover:underline'>
-                    CAREERS
-                </li>
-            </Link>
-            <Link to='/ourservices'>
-                <li className='hidden sm:inline text-slate-700 hover:underline'>
-                    OUR SERVICES
-                </li>
-            </Link>
-            <Link to='/sign-in'>
-                <li className='text-slate-700 hover:underline'>
-                    SIGN IN
-                </li>
-            </Link>
+        <h1 className="text-3xl sm:inline font-fgsemibold font-bold tracking-wide text-[#F16128] hover:text-black transition-colors duration-300">PHOENIX</h1>
+      </div>
+
+      {/* Navigation Section */}
+      <nav className='
+      '>
+        <ul className="flex gap-3 px-10 justify-center items-center text-sm font-nmregular text-gray-700">
         
-        
-        
+          
+          <Link to="/contactus">
+            <li className="hidden sm:inline hover:underline">CONTACT US</li>
+          </Link>
+          <Link to="/resources">
+            <li className=" hidden sm:inline hover:underline">WELFARE</li>
+          </Link>
+          <Link to="/careers">
+            <li className=" hidden sm:inline hover:underline">CAREERS</li>
+          </Link>
+          <Link to="/ourservices">
+            <li className="hidden sm:inline hover:underline">OUR SERVICES</li>
+          </Link>
+          <Link to="/">
+            <li className="  hover:underline">HOME</li>
+          </Link>
+          <Link to="/profile">
+         
+           
+          <li className=" hover:underline ">SIGN IN</li>
+          
+          </Link>
+
         </ul>
-        </div>
+      </nav>
+
+      {/* Search Section */}
+      <form className=" bg-gray-100 p-1 rounded-lg flex items-center gap-0.1">
+        <input
+          type="text"
+          placeholder="SEARCH"
+          className="bg-transparent   "
+        />
+        <FaSearch className="text-gray-600" />
+      </form>
     </header>
   )
 }
